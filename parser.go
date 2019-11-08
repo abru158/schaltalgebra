@@ -66,7 +66,7 @@ func (p *parser) parseUnaryExpression() expression {
 	case '!', '-':
 		p.next()
 		return &astNegatedExpression{
-			expr: p.parsePrimaryExpression(),
+			expr: p.parseUnaryExpression(),
 		}
 	}
 	return p.parsePrimaryExpression()
